@@ -11,7 +11,7 @@ const resolvePathname = require('resolve-pathname');
 const axios = require('axios');
 const { URL } = require('url');
 
-const ALPHA_CONFIG = [ 'adapter', 'lambda', 'Lambda', 'retry', '__retryCount' ];
+const ALPHA_CONFIG = [ 'adapter', 'lambda', 'Lambda', 'retry', 'addRequestContext', '__retryCount' ];
 
 const Axios = axios.Axios;
 class Alpha extends Axios {

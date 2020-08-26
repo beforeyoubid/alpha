@@ -73,3 +73,33 @@ test.serial(`handles null keys`, test => {
     }
   });
 });
+
+test.serial(`Can include request context`, async (test) => {
+  process.env['STAGE'] = 'test';
+  config.url = lambda + params;
+  const mergedConfig = {
+    ...config,
+    addRequestContext: true
+  };
+  test.deepEqual(lambdaEvent(mergedConfig, params), {
+    body: '',
+    headers: {},
+    httpMethod: 'GET',
+    path: '/lifeomic/dstu3/Questionnaire',
+    queryStringParameters: {
+      _tag: 'http://lifeomic.com/fhir/questionnaire-type|survey-form',
+      pageSize: '25',
+      test: 'diffValue'
+    },
+    requestContext: {
+      stage: 'test',
+      identity: {
+        sourceIp: ''
+      },
+      authorizer: {
+        principalId: ''
+      },
+      elb: false
+    }
+  });
+});

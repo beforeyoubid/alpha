@@ -8,17 +8,7 @@ const RequestError = require('./helpers/RequestError');
 async function lambdaHandlerAdapter (config) {
   const request = {
     context: {},
-    event: lambdaEvent(config),
-    requestContext: {
-      stage: process.env.STAGE,
-      identity: {
-        sourceIp: ''
-      },
-      authorizer: {
-        principalId: ''
-      },
-      elb: false
-    }
+    event: lambdaEvent(config)
   };
 
   const handler = promisify(config.lambda);

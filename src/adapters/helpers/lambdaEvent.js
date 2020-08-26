@@ -18,6 +18,19 @@ module.exports = (config, relativeUrl) => {
     event.isBase64Encoded = true;
   }
 
+  if (config.addRequestContext) {
+    event.requestContext = {
+      stage: process.env.STAGE,
+      identity: {
+        sourceIp: ''
+      },
+      authorizer: {
+        principalId: ''
+      },
+      elb: false
+    };
+  }
+
   return event;
 };
 

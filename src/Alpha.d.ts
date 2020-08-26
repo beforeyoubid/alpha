@@ -10,6 +10,7 @@ declare module '@lifeomic/alpha' {
 
   interface AlphaOptions extends AxiosRequestConfig {
     retry?: RetryOptions,
+    addRequestContext?: Boolean,
     lambda?: Function
   }
 
