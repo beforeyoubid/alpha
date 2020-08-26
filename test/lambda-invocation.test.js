@@ -62,7 +62,7 @@ async function assertInvalidUrl (test, url) {
   // Override the shared alpha client to include a qualifier
   test.context.alpha = new Alpha(url);
   const response = test.context.alpha.get('/some/path');
-  await test.throwsAsync(() => response, `The config.url, '${url}/some/path' does not appear to be a Lambda Function URL`);
+  await test.throwsAsync(() => response, null, `The config.url, '${url}/some/path' does not appear to be a Lambda Function URL`);
 }
 
 test('Invalid URLs cause Errors to be thrown', async (test) => {
