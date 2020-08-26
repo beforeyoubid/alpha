@@ -1,6 +1,6 @@
 {
-  "name": "@lifeomic/alpha",
   "version": "1.2.1",
+  "name": "@beforeyoubid/alpha",
   "description": "Unified client for HTTP services.",
   "main": "lib/Alpha",
   "types": "lib/Alpha.d.ts",
@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lifeomic/alpha.git"
+    "url": "https://github.com/beforeyoubid/alpha.git"
   },
   "scripts": {
     "coverage": "nyc report --reporter=text-lcov | coveralls",
