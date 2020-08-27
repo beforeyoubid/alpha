@@ -1,4 +1,4 @@
-declare module '@lifeomic/alpha' {
+declare module '@beforeyoubid/alpha' {
   import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
   interface RetryOptions {

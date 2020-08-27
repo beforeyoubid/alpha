@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/lifeomic/alpha.svg?branch=master)](https://travis-ci.org/lifeomic/alpha)
 [![Coverage Status](https://coveralls.io/repos/github/lifeomic/alpha/badge.svg?branch=master)](https://coveralls.io/github/lifeomic/alpha?branch=master)
 [![Greenkeeper badge](https://badges.greenkeeper.io/lifeomic/alpha.svg)](https://greenkeeper.io/)
-[![Known Vulnerabilities](https://snyk.io/test/github/lifeomic/alpha/badge.svg?targetFile=package.json)](https://snyk.io/test/github/lifeomic/alpha?targetFile=package.json)
+[![Known Vulnerabilities](https://snyk.io/test/github/beforeyoubid/alpha/badge.svg?targetFile=package.json)](https://snyk.io/test/github/beforeyoubid/alpha?targetFile=package.json)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/lifeomic/alpha)
 
 Alpha is a module that provides a single client interface for interacting with
