@@ -2,7 +2,7 @@
 // reading them from the filesystem so that webpack
 // can easily find the modules needed to include.
 
-module.exports = [
+export default [
   require('./lambda-handler.js'),
   require('./lambda-invocation.js'),
   require('./response-retry.js'),

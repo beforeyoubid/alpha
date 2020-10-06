@@ -1,4 +1,4 @@
-module.exports = (client) => {
+export default (client) => {
   client.interceptors.request.use(config => {
     const alphaConfig = config.adapter;
     delete config.adapter;

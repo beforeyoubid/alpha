@@ -1,7 +1,7 @@
-const urlParse = require('url-parse');
-const querystring = require('querystring');
+import urlParse from 'url-parse';
+import querystring from 'querystring';
 
-module.exports = (config, relativeUrl) => {
+export default (config, relativeUrl) => {
   const parts = urlParse(relativeUrl || config.url, null, querystringWithArraySupport);
   const params = Object.assign({}, parts.query, config.params);
 

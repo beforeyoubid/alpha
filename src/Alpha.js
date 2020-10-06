@@ -1,19 +1,18 @@
-const adapters = require('./adapters');
-const cloneDeep = require('lodash/cloneDeep');
-const isAbsoluteURL = require('./adapters/helpers/isAbsoluteURL');
-const isString = require('lodash/isString');
-const merge = require('lodash/merge');
-const parseLambdaUrl = require('./adapters/helpers/parseLambdaUrl');
-const pick = require('lodash/pick');
-const RequestError = require('./adapters/helpers/RequestError');
-const resolvePathname = require('resolve-pathname');
-
-const axios = require('axios');
-const { URL } = require('url');
+import adapters from './adapters';
+import cloneDeep from 'lodash/cloneDeep';
+import isAbsoluteURL from './adapters/helpers/isAbsoluteURL';
+import isString from 'lodash/isString';
+import merge from 'lodash/merge';
+import parseLambdaUrl from './adapters/helpers/parseLambdaUrl';
+import pick from 'lodash/pick';
+import RequestError from './adapters/helpers/RequestError';
+import resolvePathname from 'resolve-pathname';
+import axios from 'axios';
+import { URL } from 'url';
 
 const ALPHA_CONFIG = [ 'adapter', 'lambda', 'Lambda', 'retry', 'addRequestContext', '__retryCount' ];
 
-const Axios = axios.Axios;
+const { Axios } = axios;
 class Alpha extends Axios {
   static dockerLambda (options, clientOptions) {
     const dockerLambda = require('docker-lambda');
@@ -121,4 +120,4 @@ class Alpha extends Axios {
   }
 }
 
-module.exports = Alpha;
+export default Alpha;

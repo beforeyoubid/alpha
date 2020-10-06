@@ -1,11 +1,11 @@
-const assert = require('assert');
-const AWS = require('aws-sdk');
-const isAbsoluteURL = require('./helpers/isAbsoluteURL');
-const chainAdapters = require('./helpers/chainAdapters');
-const lambdaEvent = require('./helpers/lambdaEvent');
-const lambdaResponse = require('./helpers/lambdaResponse');
-const parseLambdaUrl = require('./helpers/parseLambdaUrl');
-const RequestError = require('./helpers/RequestError');
+import assert from 'assert';
+import AWS from 'aws-sdk';
+import isAbsoluteURL from './helpers/isAbsoluteURL';
+import chainAdapters from './helpers/chainAdapters';
+import lambdaEvent from './helpers/lambdaEvent';
+import lambdaResponse from './helpers/lambdaResponse';
+import parseLambdaUrl from './helpers/parseLambdaUrl';
+import RequestError from './helpers/RequestError';
 
 async function lambdaInvocationAdapter (config) {
   const Lambda = config.Lambda || AWS.Lambda;
@@ -98,6 +98,6 @@ function lambdaInvocationRequestInterceptor (config) {
   );
 }
 
-module.exports = (client) => {
+export default (client) => {
   client.interceptors.request.use(lambdaInvocationRequestInterceptor);
 };

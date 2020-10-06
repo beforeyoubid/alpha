@@ -1,7 +1,7 @@
-const http = require('http');
-const RequestError = require('./RequestError');
+import http from 'http';
+import RequestError from './RequestError';
 
-module.exports = (config, request, payload) => {
+export default (config, request, payload) => {
   const response = {
     config,
     data: payload.body,

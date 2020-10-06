@@ -1,6 +1,6 @@
-const axios = require('axios');
+import axios from 'axios';
 
-module.exports = (config, predicate, adapter) => {
+export default (config, predicate, adapter) => {
   const nextAdapter = config.adapter || axios.defaults.adapter;
 
   config.adapter = async (config) => {

@@ -1,9 +1,9 @@
-const chainAdapters = require('./helpers/chainAdapters');
-const isAbsoluteURL = require('./helpers/isAbsoluteURL');
-const lambdaEvent = require('./helpers/lambdaEvent');
-const lambdaResponse = require('./helpers/lambdaResponse');
-const promisify = require('./helpers/promisify');
-const RequestError = require('./helpers/RequestError');
+import chainAdapters from './helpers/chainAdapters';
+import isAbsoluteURL from './helpers/isAbsoluteURL';
+import lambdaEvent from './helpers/lambdaEvent';
+import lambdaResponse from './helpers/lambdaResponse';
+import promisify from './helpers/promisify';
+import RequestError from './helpers/RequestError';
 
 async function lambdaHandlerAdapter (config) {
   const request = {
@@ -31,6 +31,6 @@ function lamdaHandlerRequestInterceptor (config) {
   );
 }
 
-module.exports = (client) => {
+export default (client) => {
   client.interceptors.request.use(lamdaHandlerRequestInterceptor);
 };

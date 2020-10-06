@@ -1,7 +1,7 @@
 'use strict';
 
-const isBoolean = require('lodash/isBoolean');
-const defaults = require('lodash/defaults');
+import isBoolean from 'lodash/isBoolean';
+import defaults from 'lodash/defaults';
 
 const DEFAULTS = {
   attempts: 3,
@@ -44,7 +44,7 @@ async function exponentialBackoff (config) {
 /**
  * Attempts to retry a failed request a configurable number of times.
  */
-module.exports = (client) => {
+export default (client) => {
   client.interceptors.response.use(
     undefined,
     async err => {

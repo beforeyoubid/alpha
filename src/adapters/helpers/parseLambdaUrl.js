@@ -1,7 +1,7 @@
-const nearley = require('nearley');
-const grammar = require('./lambdaURLGrammar');
+import nearley from 'nearley';
+import grammar from './lambdaURLGrammar';
 
-module.exports = (url) => {
+export default (url) => {
   const parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar));
   try {
     parser.feed(url);
