@@ -1,10 +1,10 @@
-const Alpha = require('../src/Alpha');
-const AWS_SDK = require('aws-sdk');
-const AWS = require('aws-sdk-mock');
-const nock = require('nock');
-const sinon = require('sinon');
-const test = require('ava');
-const size = require('lodash/size');
+import Alpha from '../src/Alpha';
+import AWS_SDK from 'aws-sdk';
+import AWS from 'aws-sdk-mock';
+import nock from 'nock';
+import sinon from 'sinon';
+import test from 'ava';
+import size from 'lodash/size';
 
 test.before(() => {
   nock.disableNetConnect();

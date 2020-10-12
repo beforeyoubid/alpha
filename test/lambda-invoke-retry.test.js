@@ -1,7 +1,7 @@
-const Alpha = require('../src/Alpha');
-const nock = require('nock');
-const sinon = require('sinon');
-const test = require('ava');
+import Alpha from '../src/Alpha';
+import nock from 'nock';
+import sinon from 'sinon';
+import test from 'ava';
 
 test.before(() => {
   nock.disableNetConnect();

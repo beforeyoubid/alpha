@@ -1,4 +1,4 @@
-const AWS = require('aws-sdk-mock');
+import AWS from 'aws-sdk-mock';
 
 // Force aws-sdk-mock to use the same instance of the SDK that the code uses.
 // This is necessary due to transpiling. See

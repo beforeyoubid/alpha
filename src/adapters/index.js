@@ -7,4 +7,4 @@ export default [
   require('./lambda-invocation.js'),
   require('./response-retry.js'),
   require('./alpha-config.js')
-];
+].map(func => Object.prototype.hasOwnProperty.call(func, 'default') ? func.default : func);

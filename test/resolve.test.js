@@ -1,5 +1,5 @@
-const Alpha = require('../src/Alpha');
-const test = require('ava');
+import Alpha from '../src/Alpha';
+import test from 'ava';
 
 test('Resolving a relative URL against a Lambda URL returns a Lambda URL', (test) => {
   const base = 'lambda://user-service';

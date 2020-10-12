@@ -1,8 +1,8 @@
-const Alpha = require('../src/Alpha');
-const AWS = require('aws-sdk-mock');
-const nock = require('nock');
-const sinon = require('sinon');
-const test = require('ava');
+import Alpha from '../src/Alpha';
+import AWS from 'aws-sdk-mock';
+import nock from 'nock';
+import sinon from 'sinon';
+import test from 'ava';
 
 test.before(() => nock.disableNetConnect());
 test.after(() => nock.enableNetConnect());

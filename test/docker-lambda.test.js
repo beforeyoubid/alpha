@@ -1,6 +1,6 @@
+import sinon from 'sinon';
+import test from 'ava';
 const proxyquire = require('proxyquire').noPreserveCache();
-const sinon = require('sinon');
-const test = require('ava');
 
 test.beforeEach((test) => {
   test.context.dockerLambda = sinon.stub().resolves({
@@ -14,7 +14,7 @@ test.beforeEach((test) => {
     {
       'docker-lambda': test.context.dockerLambda
     }
-  );
+  ).default;
 });
 
 test.serial('A docker-lambda client passes events to the docker wrapper', async (test) => {
