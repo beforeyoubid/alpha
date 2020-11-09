@@ -23,7 +23,7 @@ async function lambdaHandlerAdapter (config) {
   return lambdaResponse(config, request, result);
 }
 
-function lamdaHandlerRequestInterceptor (config) {
+function lambdaHandlerRequestInterceptor (config) {
   return chainAdapters(
     config,
     (config) => (!isAbsoluteURL(config.url) && config.lambda),
@@ -32,5 +32,7 @@ function lamdaHandlerRequestInterceptor (config) {
 }
 
 export default (client) => {
-  client.interceptors.request.use(lamdaHandlerRequestInterceptor);
+  if (client.interceptors && client.interceptors.request) {
+    client.interceptors.request.use(lambdaHandlerRequestInterceptor);
+  }
 };

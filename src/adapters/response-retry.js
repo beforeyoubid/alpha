@@ -45,25 +45,27 @@ async function exponentialBackoff (config) {
  * Attempts to retry a failed request a configurable number of times.
  */
 export default (client) => {
-  client.interceptors.response.use(
-    undefined,
-    async err => {
-      const config = err.config;
-      if (!config || !config.retry) {
-        return Promise.reject(err);
+  if (client.interceptors && client.interceptors.request) {
+    client.interceptors.response.use(
+      undefined,
+      async err => {
+        const config = err.config;
+        if (!config || !config.retry) {
+          return Promise.reject(err);
+        }
+
+        setDefaults(config);
+
+        if (!config.retry.retryCondition(err) ||
+            config.__retryCount >= config.retry.attempts) {
+          return Promise.reject(err);
+        }
+
+        await exponentialBackoff(config);
+
+        // Send another request after delay
+        return client.request(config);
       }
-
-      setDefaults(config);
-
-      if (!config.retry.retryCondition(err) ||
-          config.__retryCount >= config.retry.attempts) {
-        return Promise.reject(err);
-      }
-
-      await exponentialBackoff(config);
-
-      // Send another request after delay
-      return client.request(config);
-    }
-  );
+    );
+  }
 };

@@ -99,5 +99,7 @@ function lambdaInvocationRequestInterceptor (config) {
 }
 
 export default (client) => {
-  client.interceptors.request.use(lambdaInvocationRequestInterceptor);
+  if (client.interceptors && client.interceptors.request) {
+    client.interceptors.request.use(lambdaInvocationRequestInterceptor);
+  }
 };
